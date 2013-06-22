@@ -1,0 +1,82 @@
+<project name="com.jjw.testtool build file" basedir="." default="all">
+   <description>
+      This is the build file for the com.jjw.testtool sub-component.
+   </description>
+   <property environment="env" />
+
+   <!-- Specify the cpc name -->
+   <property name="component" value="com.jjw.testtool" />
+   <echo message="${component}" />
+
+   <!-- Grab user's personal properties -->
+   <property file="build.${env.USER}.properties" />
+
+   <!-- Setup common properties -->
+   <property name="jjw.dir" value="${env.JJW_DIR}" />
+   <property name="common.dir" value="${jjw.dir}/common" />
+   <property file="${common.dir}/common-build.properties" />
+   <property file="build.properties" />
+
+   <!-- Setup compile classpath -->
+   <path id="compile.classpath">
+      <fileset dir="${cots.dir}" includes="**/*.jar" />
+      <pathelement path="${jjw.webservice.jar}"/>
+   </path>
+
+   <!-- Define all of the files we want to end up in deploy/${component}/config -->
+   <path id="configtodeploy">
+      <pathelement path="${common.application.context}" />
+      <pathelement path="${application.context}" />
+      <pathelement path="${application.properties}" />
+      <pathelement path="${log4j.config.file}" />
+      <pathelement path="${webservice.client.application.context}" />
+   </path>
+   <property name="config.to.deploy" refid="configtodeploy" />
+
+   <!-- Define all of the files we want to end up in deploy/${component}/bin -->
+   <path id="bintodeploy">
+      <pathelement path="${start.script}" />
+      <pathelement path="${stop.script}" />
+   </path>
+   <property name="bin.to.deploy" refid="bintodeploy" />
+
+   <!-- Define all of the files you want to end up in deploy/${component}/lib -->
+   <path id="libtodeploy">
+      <pathelement path="${jjw.core.jar}" />
+      <pathelement path="${jjw.webservice.jar}" />
+      <pathelement path="${jjw.testtool.jar}" />
+      <pathelement path="${log4j.jar}" />
+      <pathelement path="${spring.aop.jar}" />
+      <pathelement path="${spring.beans.jar}" />
+      <pathelement path="${spring.context.jar}" />
+      <pathelement path="${spring.core.jar}" />
+      <pathelement path="${spring.jdbc.jar}" />
+      <pathelement path="${spring.jms.jar}" />
+      <pathelement path="${spring.expression.jar}" />
+      <pathelement path="${spring.tx.jar}" />
+      <pathelement path="${spring.web.jar}" />
+      <pathelement path="${commons.logging.jar}" />
+      <pathelement path="${camel.core.jar}" />
+      <pathelement path="${camel.jms.jar}" />
+      <pathelement path="${camel.spring.jar}" />
+      <pathelement path="${slf4j.jar}" />
+      <pathelement path="${slf4j.log4j12.jar}" />
+      <pathelement path="${activemq.camel.jar}" />
+      <pathelement path="${activemq.core.jar}" />
+      <pathelement path="${activemq.commons.pool.jar}" />
+      <pathelement path="${activemq.geronimo.jar}" />
+      <pathelement path="${activemq.spring.jar}" />
+      <pathelement path="${activemq.geronimo.mgmt.jar}" />
+      <pathelement path="${mysql.connector.jar}" />
+   </path>
+   <property name="lib.to.deploy" refid="libtodeploy" />
+
+   <!-- Load in the common build file -->
+   <import file="${common.dir}/common-build.xml" as="common-build" />
+
+   <!-- Target: Token-Replace -->
+   <target name="finalize" description="Token replace for my component." depends="common-build.finalize">
+      <token-replace includes=".properties" dir="${deploy.config.dir}" token="@JMS_TIMEOUT@" value="${jms.timeout}" />
+   </target>
+
+</project>
