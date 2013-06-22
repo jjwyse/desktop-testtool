@@ -15,8 +15,6 @@ import javax.swing.JTextField;
 import org.apache.log4j.Logger;
 import org.springframework.web.client.RestTemplate;
 
-import com.jjw.webservice.pojo.Person;
-
 public class WebServicePanel extends JPanel
 {
     /** Logger instance. */
@@ -87,9 +85,9 @@ public class WebServicePanel extends JPanel
 
                 Map<String, String> vars = new HashMap<String, String>();
                 vars.put("id", myIdTextField.getText());
-                Person person = myRestTemplate.getForObject(URL_BASE + "addressbook/{id}", Person.class, vars);
+                // Person person = myRestTemplate.getForObject(URL_BASE + "addressbook/{id}", Person.class, vars);
 
-                LOG.info("Received person: " + person);
+                // LOG.info("Received person: " + person);
             }
             catch (Exception exception)
             {
