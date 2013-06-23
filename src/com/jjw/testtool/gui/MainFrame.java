@@ -13,7 +13,7 @@ import org.apache.camel.ProducerTemplate;
 import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 
-import com.jjw.testtool.tabbedpanel.ActiveMqPanel;
+import com.jjw.testtool.tabbedpanel.JmsPanel;
 import com.jjw.testtool.tabbedpanel.WebServicePanel;
 
 /**
@@ -50,7 +50,7 @@ public class MainFrame extends JFrame
         menuBar.add(menu);
 
         JTabbedPane tabs = new JTabbedPane();
-        tabs.addTab("ActiveMQ", new ActiveMqPanel(myProducer));
+        tabs.addTab("JMS", new JmsPanel(myProducer));
         tabs.addTab("Web Service", new WebServicePanel());
 
         this.setJMenuBar(menuBar);

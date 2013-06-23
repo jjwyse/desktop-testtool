@@ -15,17 +15,17 @@ import javax.swing.JTextField;
 import org.apache.camel.ProducerTemplate;
 import org.apache.log4j.Logger;
 
-public class ActiveMqPanel extends JPanel
+public class JmsPanel extends JPanel
 {
     /** Logger instance. */
-    Logger LOG = Logger.getLogger(ActiveMqPanel.class);
+    Logger LOG = Logger.getLogger(JmsPanel.class);
 
     /** Serial ID */
     private static final long serialVersionUID = 1L;
 
     public ProducerTemplate myProducer;
 
-    public ActiveMqPanel(ProducerTemplate producer)
+    public JmsPanel(ProducerTemplate producer)
     {
         super();
 
