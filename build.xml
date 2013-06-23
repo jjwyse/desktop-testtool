@@ -1,19 +1,19 @@
-<project name="com.jjw.testtool build file" basedir="." default="all">
+<project name="testtool build file" basedir="." default="all">
    <description>
-      This is the build file for the com.jjw.testtool sub-component.
+      This is the build file for the testtool sub-component.
    </description>
    <property environment="env" />
 
    <!-- Specify the cpc name -->
-   <property name="component" value="com.jjw.testtool" />
+   <property name="component" value="testtool" />
    <echo message="${component}" />
 
    <!-- Grab user's personal properties -->
    <property file="build.${env.USER}.properties" />
 
    <!-- Setup common properties -->
-   <property name="jjw.dir" value="${env.JJW_DIR}" />
-   <property name="common.dir" value="${jjw.dir}/common" />
+   <property name="workspace.dir" value="${env.WORKSPACE_HOME}" />
+   <property name="common.dir" value="${workspace.dir}/common" />
    <property file="${common.dir}/common-build.properties" />
    <property file="build.properties" />
 

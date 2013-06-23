@@ -1,4 +1,4 @@
-com.jjw.testtool
+testtool
 ================
 
-Desktop test tool for sending JMS messages
+Desktop test tool for black-box testing applications
