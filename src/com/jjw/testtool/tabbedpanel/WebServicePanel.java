@@ -24,7 +24,7 @@ public class WebServicePanel extends JPanel
     private static final long serialVersionUID = 1L;
 
     /** Base URL to the web services */
-    private static final String URL_BASE = "http://localhost:8080/com.jjw.webservice/";
+    private static final String URL_BASE = "http://localhost:8080/addressbook/";
 
     /** Text field to specify the ID to pass to the service */
     private JTextField myIdTextField;

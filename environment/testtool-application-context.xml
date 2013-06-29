@@ -9,7 +9,7 @@
    default-init-method="init" default-destroy-method="destroy">
 
    <import resource="common-application-context.xml" />
-   <import resource="webservice-client-application-context.xml" />
+   <import resource="addressbook-client-application-context.xml" />
 
    <bean id="MainPanel" class="com.jjw.testtool.gui.MainFrame" />
    <bean id="StickyLoadBalancer" class="com.jjw.testtool.camel.StickyLoadBalancer" >

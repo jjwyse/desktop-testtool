@@ -20,7 +20,7 @@
    <!-- Setup compile classpath -->
    <path id="compile.classpath">
       <fileset dir="${cots.dir}" includes="**/*.jar" />
-      <pathelement path="${jjw.webservice.jar}"/>
+      <pathelement path="${jjw.addressbook.jar}"/>
    </path>
 
    <!-- Define all of the files we want to end up in deploy/${component}/config -->
@@ -29,7 +29,7 @@
       <pathelement path="${application.context}" />
       <pathelement path="${application.properties}" />
       <pathelement path="${log4j.config.file}" />
-      <pathelement path="${webservice.client.application.context}" />
+      <pathelement path="${addressbook.client.application.context}" />
    </path>
    <property name="config.to.deploy" refid="configtodeploy" />
 
@@ -43,7 +43,7 @@
    <!-- Define all of the files you want to end up in deploy/${component}/lib -->
    <path id="libtodeploy">
       <pathelement path="${jjw.core.jar}" />
-      <pathelement path="${jjw.webservice.jar}" />
+      <pathelement path="${jjw.addressbook.jar}" />
       <pathelement path="${jjw.testtool.jar}" />
       <pathelement path="${log4j.jar}" />
       <pathelement path="${spring.aop.jar}" />

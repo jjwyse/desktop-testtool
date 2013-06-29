@@ -28,7 +28,7 @@
    <bean id="JaxbMarshaller" class="org.springframework.oxm.jaxb.Jaxb2Marshaller">
       <property name="classesToBeBound">
          <list>
-            <value>com.jjw.webservice.pojo.Person</value>
+            <value>com.jjw.addressbook.pojo.Person</value>
          </list>
       </property>
    </bean>-->
